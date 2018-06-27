@@ -1,7 +1,4 @@
 /**
- *  Garadget
- *
- *  Copyright 2018/**
  *  Garadget Device Handler
  *
  *  Copyright 2016 Stuart Buchanan based loosely based on original code by Krishnaraj Varma with thanks
