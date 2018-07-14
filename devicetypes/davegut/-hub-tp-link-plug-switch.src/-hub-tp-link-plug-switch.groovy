@@ -82,9 +82,12 @@ metadata {
 
 	def rates = [:]
 	rates << ["1" : "Refresh every minutes (Not Recommended)"]
-	rates << ["5" : "Refresh every 5 minutes"]
+    rates << ["3" : "Refresh every 3 minutes"]
+	rates << ["5" : "Refresh every 5 minutes"]	
+    rates << ["7" : "Refresh every 7 minutes"]
 	rates << ["10" : "Refresh every 10 minutes"]
 	rates << ["15" : "Refresh every 15 minutes"]
+    rates << ["20" : "Refresh every 20 minutes"]
 	rates << ["30" : "Refresh every 30 minutes (Recommended)"]
 
 	preferences {
@@ -113,10 +116,18 @@ def update() {
 		case "1":
 			runEvery1Minute(refresh)
 			log.info "Refresh Scheduled for every minute"
+			break		
+        case "3":
+			runEvery3Minutes(refresh)
+			log.info "Refresh Scheduled for every 3 minutes"
 			break
 		case "5":
 			runEvery5Minutes(refresh)
 			log.info "Refresh Scheduled for every 5 minutes"
+			break
+        case "7":
+			runEvery7Minutes(refresh)
+			log.info "Refresh Scheduled for every 7 minutes"
 			break
 		case "10":
 			runEvery10Minutes(refresh)
@@ -125,6 +136,10 @@ def update() {
 		case "15":
 			runEvery15Minutes(refresh)
 			log.info "Refresh Scheduled for every 15 minutes"
+			break
+        case "20":
+			runEvery20Minutes(refresh)
+			log.info "Refresh Scheduled for every 20 minutes"
 			break
 		default:
 			runEvery30Minutes(refresh)
